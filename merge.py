@@ -52,8 +52,27 @@ def koalpaca(ctx, output):
             })
 
     fout.close()
+    
+@cli.command()
+@click.option("--output", default="OKI-data/OIG-smallchip2-ko.json")
+@click.pass_context
+def koalpaca(ctx, output):
+    os.makedirs(os.path.dirname(output), exist_ok=True)
+    print("koalpaca", ctx.obj)
+    user, bot, sys = ctx.obj["user"], ctx.obj["bot"], ctx.obj["sys"]
 
+    koalpaca = load_dataset("heegyu/OIG-small-chip2-ko", split="train")
+    fout = jsonlines.open(output, "w")
 
+    for item in tqdm(koalpaca, desc="processing OIG-smallchip2-ko"):
+        instruction, generation = item["user_translated"].strip(), item["chip2_translated"].strip()
+
+        if input:
+            fout.write({
+                "source": "koalpaca-v1.0",
+                "text": f"{user} {instruction}\n{bot} {generation}"
+            })
+            
 def join_conversation(conv, user, bot):
     lines = []
     for uttr in conv:
@@ -86,6 +105,11 @@ def sharegpt_deepl_ko(ctx, output):
 
         for item in tqdm(items):
             text = join_conversation(item["conversations"], user, bot)
+
+            if bot not in text:
+                print("no bot", text)
+                continue
+            
             if text:
                 fout.write({
                     "source": "kovicuna",

@@ -11,6 +11,8 @@ import re
 import openai
 import ray
 
+# 너무 긴 context는 제거한다
+MAX_LENGTH_TO_SKIP = 6120
 
 class DataSource:
     def __getitem__(self, index):
@@ -64,6 +66,9 @@ class ChatGPTGenerator(Generator):
         """.strip()
 
         query = f"제목: {item['title']}\n{item['text']}"
+
+        if len(query) >= MAX_LENGTH_TO_SKIP:
+            return None
 
         output = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
