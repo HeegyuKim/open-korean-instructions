@@ -1,5 +1,6 @@
 .cred
 data/
+OKI-data
 google-service-key.json
 
 # Byte-compiled / optimized / DLL files

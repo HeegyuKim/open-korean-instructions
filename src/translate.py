@@ -159,29 +159,40 @@ def iter_batch(translator, source: DataSource, start_index: int, batch_size: int
 @click.argument("dataset")
 @click.argument("output")
 @click.option("--batch-size", default=8, type=int)
+@click.option("--translator", default="chatgpt", type=str)
 @click.option("--max-items", default=100, type=int)
 @click.option("--resume", default=True, type=bool)
 def main(
     dataset: str,
     output: str,
+    translator: str,
     resume: bool,
     max_items: Optional[int],
     batch_size: int
 ):
-    # translator = GoogleTranslator()
-    translator = ChatGPTTranslator()
+    if translator == "google":
+        translator = GoogleTranslator()
+    elif translator == "chatgpt":
+        translator = ChatGPTTranslator()
+    else:
+        raise ValueError(f"unknown translator {translator}")
+    
     source = DATA_SOURCES[dataset]()
     start_index = 0
 
     if os.path.exists(output):
-        # 이전에 몇개까지 번역을 했었는지 확인
-        with jsonlines.open(output) as f:
-            for start_index, _ in enumerate(f):
-                pass
-            if start_index > 0:
-                start_index += 1
+        if resume:
+            # 이전에 몇개까지 번역을 했었는지 확인
+            with jsonlines.open(output) as f:
+                for start_index, _ in enumerate(f):
+                    pass
+                if start_index > 0:
+                    start_index += 1
 
-        output_file = jsonlines.open(output, "a")
+            print("resume from", start_index)
+            output_file = jsonlines.open(output, "a")
+        else:
+            raise Exception(f"{output} file is already exist.")
     else:
         output_file = jsonlines.open(output, "w")
 
