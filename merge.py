@@ -117,6 +117,43 @@ def sharegpt_deepl_ko(ctx, output):
                 })
 
 
+def parse_korquad_chat(text: str, user, bot):
+    text = text.replace("A: ", f"{user} ")
+    text = text.replace("B: ", f"{bot} ")
+    text = text.replace("A씨", "<|user|>")
+    text = text.replace("B씨", "<|bot|>")
+    text = text.replace("\n\n", "\n")
+    return text
+
+@cli.command("korquad-chat")
+@click.option("--output", default="OKI-data/korquad-chat.json")
+@click.pass_context
+def sharegpt_deepl_ko(ctx, output):
+    os.makedirs(os.path.dirname(output), exist_ok=True)
+    user, bot, sys = ctx.obj["user"], ctx.obj["bot"], ctx.obj["sys"]
+    print("korquad-chat", ctx.obj)
+    
+    with jsonlines.open("data/korquad-chat.jsonl") as fin, \
+        jsonlines.open(output, "w") as fout:
+
+        for i, items in enumerate(tqdm(fin)):
+            if isinstance(items, dict):
+                items = [items]
+
+            for item in items:
+                text = item["text"]
+                if item.get("dialogue") is None:
+                    print(i, item)
+                    continue
+
+                dialog = parse_korquad_chat(item["dialogue"], user, bot)
+                text = f"{sys}{text}\n{dialog}"
+                
+                fout.write({
+                    "source": "korquad-chat",
+                    "text": text,
+                })
+
     
 
 
