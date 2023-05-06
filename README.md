@@ -1,20 +1,22 @@
 # open-korean-instructions
-언어모델을 학습하기 위한 공개 한국어 instruction dataset들을 모아두었습니다.
+Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어 instruction dataset들을 모아둔 데이터셋입니다. KoAlpaca v1.0과 v1.1, ShareGPT DeepL 번역, OIG-smallchip2-ko, KorQuAD-chat 5가지를 포멧을 통일하고 합쳤습니다. [Huggingface Link](https://huggingface.co/datasets/heegyu/open-korean-instructions). 
 
+[Gradio Demo](https://huggingface.co/spaces/heegyu/gorani-v0) 위 데이터로 학습한 355M 모델을 사용해보실 수 있습니다.
+
+## 공개된 데이터 정리
 | 이름 | # | 타입 |
 |---|---|---|
 | [KoAlpaca v1.0](https://huggingface.co/datasets/Bingsu/ko_alpaca_data) | 52K | 싱글턴 |
 | [KoAlpaca v1.1](https://raw.githubusercontent.com/Beomi/KoAlpaca/main/KoAlpaca_v1.1.jsonl) | 21K | 싱글턴 |
 | [ShareGPT DeepL 번역](https://huggingface.co/datasets/junelee/sharegpt_deepl_ko) | 620K | 멀티턴, 싱글턴 |
 | [KoChatGPT 실습](https://github.com/airobotlab/KoChatGPT) | 13K | 싱글턴, 멀티턴, RM |
-| OIG-small-chip2-ko (비공개) | 200K | 싱글턴 |
-
-## Working In Progress..
-- KorQuAD
+| [OIG-small-chip2-ko](https://huggingface.co/datasets/heegyu/OIG-small-chip2-ko) | 210K | 싱글턴 |
+| [Korquad-Chat](https://huggingface.co/datasets/heegyu/korquad-chat-v1) | 9.6K | 멀티턴, 지식기반 |
 
 
 
 ## 데이터 생성 코드
+일부 데이터는 번역되거나 ChatGPT를 통해 생성했습니다.<br/>
 `src/`에 있는 코드를 이용하여 데이터를 생성할 수 있습니다.
 
 ### Translate API를 이용하여 번역
