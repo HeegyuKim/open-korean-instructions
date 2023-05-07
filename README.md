@@ -13,7 +13,10 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [OIG-small-chip2-ko](https://huggingface.co/datasets/heegyu/OIG-small-chip2-ko) | 210K | 싱글턴 |
 | [Korquad-Chat](https://huggingface.co/datasets/heegyu/korquad-chat-v1) | 9.6K | 멀티턴, 지식기반 |
 
-
+## 그 외의 공개 대화 데이터(추후 전처리해서 추가할 예정)
+- [AIRC-KETI/kowow](https://github.com/AIRC-KETI/kowow): WoW(Wizard Of Wikipedia) - 지식기반 대화 데이터를 번역한 데이터
+- [smilegate-ai/HuLiC](https://github.com/smilegate-ai/HuLiC)
+- [smilegate-ai/OPELA](https://github.com/smilegate-ai/OPELA)
 
 ## 데이터 생성 코드
 일부 데이터는 번역되거나 ChatGPT를 통해 생성했습니다.<br/>
