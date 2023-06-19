@@ -18,7 +18,8 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 - [smilegate-ai/HuLiC](https://github.com/smilegate-ai/HuLiC)
 - [smilegate-ai/OPELA](https://github.com/smilegate-ai/OPELA)
 - [CounselGPT](https://github.com/MrBananaHuman/CounselGPT) 
-
+- [Evolve-instruct](https://github.com/lcw99/evolve-instruct/)
+  
 ## 데이터 생성 코드
 일부 데이터는 번역되거나 ChatGPT를 통해 생성했습니다.<br/>
 `src/`에 있는 코드를 이용하여 데이터를 생성할 수 있습니다.
