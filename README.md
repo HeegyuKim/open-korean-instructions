@@ -20,6 +20,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 - [CounselGPT](https://github.com/MrBananaHuman/CounselGPT) 
 - [Evolve-instruct](https://github.com/lcw99/evolve-instruct/)
 - [KULLM v2](https://huggingface.co/datasets/nlpai-lab/kullm-v2)
+- [psymon/namuwiki_alpaca_dataset](https://huggingface.co/datasets/psymon/namuwiki_alpaca_dataset/viewer/psymon--namuwiki_alpaca_dataset/train?row=0)
 
 ## 데이터 생성 코드
 일부 데이터는 번역되거나 ChatGPT를 통해 생성했습니다.<br/>
