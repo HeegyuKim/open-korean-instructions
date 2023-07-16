@@ -3,7 +3,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 
 [Gradio Demo](https://huggingface.co/spaces/heegyu/gorani-v0) 위 데이터로 학습한 355M 모델을 사용해보실 수 있습니다.
 
-이 외에도  번역하거나 GPT를 이용해서 생성한 다양한 데이터들이 존재합니다.
+이 외에도  번역하거나 GPT를 이용해서 생성한 다양한 데이터들이 존재합니다. 혹시 새로운 데이터가 있다면 PR로 알려주세요.
 
 ## 공개된 데이터 정리
 | 이름 | # | 타입 | 내용 |
@@ -16,7 +16,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [OIG-small-chip2-ko](https://huggingface.co/datasets/heegyu/OIG-small-chip2-ko) | 210K | 싱글턴 | LAION AI의 [OIG-smallchip-2](https://github.com/LAION-AI/Open-Instruction-Generalist) 영어 데이터 Google Translate으로 번역 |
 | [Korquad-Chat](https://huggingface.co/datasets/heegyu/korquad-chat-v1) | 9.6K | 멀티턴, 지식기반 | [KorQuAD v1](https://huggingface.co/datasets/KETI-AIR/korquad) 데이터의 context(뉴스, 위키백과의 문단)을 주고, 관련 내용의 대화를 ChatGPT로 생성 |
 | [AIRC-KETI/kowow](https://github.com/AIRC-KETI/kowow) | ? | 멀티턴, 지식기반 | WoW(Wizard Of Wikipedia) - 지식기반 대화 데이터를 번역한 데이터 |
-| [CounselGPT](https://github.com/MrBananaHuman/CounselGPT) | 싱글턴(13k)<br/>멀티턴(8.7k) | 멀티턴, 싱글턴 | ChatGPT로 생성한 상담 데이터 |
+| [CounselGPT](https://github.com/MrBananaHuman/CounselGPT) | 싱글턴(13k)<br/>멀티턴(8.7k) | 멀티턴, 싱글턴 | GPT로 생성한 상담 데이터 |
 | [Evolve-instruct](https://github.com/lcw99/evolve-instruct/) | 37k | 싱글턴 | [WizardLM]()에서 사용된 evol-instruct를 이용하여 instruction을 증강한 후 GP로 답변 생성한 데이터 |
 | [KULLM v2](https://huggingface.co/datasets/nlpai-lab/kullm-v2) | 153k | 싱글턴 | GPT4ALL, Dolly, Vicuna(ShareGPT) 데이터를 DeepL로 번역 |
 | [psymon/namuwiki_alpaca_dataset](https://huggingface.co/datasets/psymon/namuwiki_alpaca_dataset/) | 79K | 싱글턴 | 나무위키 덤프 파일을 Stanford Alpaca 학습에 맞게 수정한 데이터셋 |
