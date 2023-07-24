@@ -20,7 +20,8 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [Evolve-instruct](https://github.com/lcw99/evolve-instruct/) | 37k | 싱글턴 | [WizardLM]()에서 사용된 evol-instruct를 이용하여 instruction을 증강한 후 GP로 답변 생성한 데이터 |
 | [KULLM v2](https://huggingface.co/datasets/nlpai-lab/kullm-v2) | 153k | 싱글턴 | GPT4ALL, Dolly, Vicuna(ShareGPT) 데이터를 DeepL로 번역 |
 | [psymon/namuwiki_alpaca_dataset](https://huggingface.co/datasets/psymon/namuwiki_alpaca_dataset/) | 79K | 싱글턴 | 나무위키 덤프 파일을 Stanford Alpaca 학습에 맞게 수정한 데이터셋 |
-| [ko-lima-vicuna](https://huggingface.co/datasets/changpt/ko-lima-vicuna) | 1k | 싱글턴, 멀티턴(극히 일부) | GPT4 API를 사용하여 lima_vicuna_format 데이터를 한국어로 재생성한 데이터셋 |
+| [changpt/ko-lima-vicuna](https://huggingface.co/datasets/changpt/ko-lima-vicuna) | 1k | 싱글턴, 멀티턴(극히 일부) | GPT4 API를 사용하여 lima_vicuna_format 데이터를 한국어로 재생성한 데이터셋 |
+| [taeshahn/ko-lima](https://huggingface.co/datasets/taeshahn/ko-lima) | 1k | 싱글턴, 멀티턴(극히 일부) | [LIMA: Less Is More for Alignment](https://arxiv.org/abs/2305.11206) (Zhou et al., 2023)의 [학습 데이터](https://huggingface.co/datasets/GAIR/lima)를 한국어로 번역한 데이터셋 |
 | [Ko-StrategyQA](https://huggingface.co/datasets/PCEO-AI-CLUB/Ko-StrategyQA) | 2.2k(질문), 9k (문서) | Multi-hop QA, 예/아니오 단답형 | 이 데이터셋은 [StrategyQA](https://allenai.org/data/strategyqa)의 한국어 버전입니다. 기존 데이터셋의 모든 질문과 단락들을 DeepL을 사용하여 번역. |
 | [HAERAE-HUB/KoInstruct-Base](https://huggingface.co/datasets/HAERAE-HUB/KoInstruct-Base) | 52k | 싱글턴 | Alpaca 데이터 번역인 듯 함. |
 | [HAERAE-HUB/KoInstruct-QA](https://huggingface.co/datasets/HAERAE-HUB/KoInstruct-QA) | 50.3k | 싱글턴 | 원본 데이터가 뭔지 모르겠음. 위 데이터중에 중복이 있을 수도 있음. |
