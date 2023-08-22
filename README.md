@@ -1,9 +1,24 @@
 # open-korean-instructions
-Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어 instruction dataset들을 모아둔 데이터셋입니다. KoAlpaca v1.0과 v1.1, ShareGPT DeepL 번역, OIG-smallchip2-ko, KorQuAD-chat 5가지를 포멧을 통일하고 합쳤습니다. [Huggingface Link](https://huggingface.co/datasets/heegyu/open-korean-instructions). 
-
-[Gradio Demo](https://huggingface.co/spaces/heegyu/gorani-v0) 위 데이터로 학습한 355M 모델을 사용해보실 수 있습니다.
-
+Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어 instruction dataset들을 모아둔 저장소입니다. <br/>
 이 외에도  번역하거나 GPT를 이용해서 생성한 다양한 데이터들이 존재합니다. 혹시 새로운 데이터가 있다면 PR로 알려주세요.
+
+## 공개 데이터를 포멧을 통일하고 병합한 데이터
+| 이름 | # | 데이터 |
+|---|---|---|
+| [open-korean-instructions](https://huggingface.co/datasets/heegyu/open-korean-instructions) | 376K | KoAlpaca v1.0과 v1.1, ShareGPT DeepL 번역, OIG-smallchip2-ko, KorQuAD-chat |
+| [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) | 171K | KoAlpaca v1.1, ShareGPT-74k-ko의 코드제거 버전, KorQuAD-chat,  evolve-instruct, KoInstruct-QA, ko-lima-vicuna-kullm-v2의 GPT4ALL, Dolly 데이터 |
+
+## 공개 데이터를 이용해서 직접 학습한 모델 모음
+| 이름 | 크기 | 데이터 |
+| --- | --- | --- |
+| [heegyu/polyglot-ko-1.3b-chat](https://huggingface.co/heegyu/polyglot-ko-1.3b-chat) | 1.3B | [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) |
+| [heegyu/polyglot-ko-3.8b-chat](https://huggingface.co/heegyu/polyglot-ko-3.8b-chat) | 3.8B | [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) |
+| [heegyu/KoLIMA-5.8b](https://huggingface.co/heegyu/KoLIMA-5.8b) | 5.8B | [changpt/ko-lima-vicuna](https://huggingface.co/datasets/changpt/ko-lima-vicuna) |
+| [heegyu/polyglot-ko-5.8b-chat](https://huggingface.co/heegyu/polyglot-ko-5.8b-chat) | 5.8B | [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) |
+| [heegyu/llama-2-ko-7b-chat](https://huggingface.co/heegyu/llama-2-ko-7b-chat) | 7B | [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) |
+| [iknow-lab/AULM-12.8b-v0](https://huggingface.co/iknow-lab/AULM-12.8b-v0) | 12.8B | [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) |
+
+[355M 모델 Gradio Demo](https://huggingface.co/spaces/heegyu/gorani-v0)
 
 ## 공개된 데이터 정리
 | 이름 | # | 타입 | 내용 |
