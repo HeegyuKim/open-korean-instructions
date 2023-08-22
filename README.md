@@ -11,6 +11,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 ## 공개 데이터를 이용해서 직접 학습한 모델 모음
 | 이름 | 크기 | 데이터 |
 | --- | --- | --- |
+| [heegyu/gorani-v0](https://huggingface.co/heegyu/gorani-v0) | 355M | [open-korean-instructions](https://huggingface.co/datasets/heegyu/open-korean-instructions) |
 | [heegyu/polyglot-ko-1.3b-chat](https://huggingface.co/heegyu/polyglot-ko-1.3b-chat) | 1.3B | [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) |
 | [heegyu/polyglot-ko-3.8b-chat](https://huggingface.co/heegyu/polyglot-ko-3.8b-chat) | 3.8B | [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) |
 | [heegyu/KoLIMA-5.8b](https://huggingface.co/heegyu/KoLIMA-5.8b) | 5.8B | [changpt/ko-lima-vicuna](https://huggingface.co/datasets/changpt/ko-lima-vicuna) |
