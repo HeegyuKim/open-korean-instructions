@@ -42,6 +42,8 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [HAERAE-HUB/KoInstruct-Base](https://huggingface.co/datasets/HAERAE-HUB/KoInstruct-Base) | 52k | 싱글턴 | Alpaca 데이터 번역인 듯 함. |
 | [HAERAE-HUB/KoInstruct-QA](https://huggingface.co/datasets/HAERAE-HUB/KoInstruct-QA) | 50.3k | 싱글턴 | 원본 데이터가 뭔지 모르겠음. 위 데이터중에 중복이 있을 수도 있음. |
 | [kyujinpy/KOpen-platypus](https://huggingface.co/datasets/kyujinpy/KOpen-platypus) | 24.9k | 싱글턴 | [garage-bAInd/Open-Platypus](https://huggingface.co/datasets/garage-bAInd/Open-Platypus) 데이터 번역 |
+| [ziozzang/EverythingLM-data-V2-Ko](https://huggingface.co/datasets/ziozzang/EverythingLM-data-V2-Ko) | 1k | 싱글턴 | [EverythingLM-data-V2](https://huggingface.co/datasets/totally-not-an-llm/EverythingLM-data-V2)를 DeepL로 번역 |
+
 
 HAERAE-HUB 데이터셋들은 설명이 없어서 어떤 데이터인지 잘 모르겠네요.
 
