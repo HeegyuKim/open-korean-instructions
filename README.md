@@ -43,7 +43,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [HAERAE-HUB/KoInstruct-QA](https://huggingface.co/datasets/HAERAE-HUB/KoInstruct-QA) | 50.3k | 싱글턴 | 원본 데이터가 뭔지 모르겠음. 위 데이터중에 중복이 있을 수도 있음. |
 | [kyujinpy/KOpen-platypus](https://huggingface.co/datasets/kyujinpy/KOpen-platypus) | 24.9k | 싱글턴 | [garage-bAInd/Open-Platypus](https://huggingface.co/datasets/garage-bAInd/Open-Platypus) 데이터 번역 |
 | [ziozzang/EverythingLM-data-V2-Ko](https://huggingface.co/datasets/ziozzang/EverythingLM-data-V2-Ko) | 1k | 싱글턴 | [EverythingLM-data-V2](https://huggingface.co/datasets/totally-not-an-llm/EverythingLM-data-V2)를 DeepL로 번역 |
-
+| [human-rights-corpus/HRC/](https://github.com/human-rights-corpus/HRC/) | 1.5k | 싱글턴 | 대화형 생성 모델을 위한 인권코퍼스 구축 - 대한민국 [국가인권위원회](https://case.humanrights.go.kr/dici/diciList.do)의 결정례와 상담사례 참조, 문체 변경과 질의 응답으로 변경하기 위해서 전후 맥락을 고려한 예시문을 만들고 GPT-3.5-turbo 을 이용하여 원샷 학습후 문답 생성 |
 
 HAERAE-HUB 데이터셋들은 설명이 없어서 어떤 데이터인지 잘 모르겠네요.
 
