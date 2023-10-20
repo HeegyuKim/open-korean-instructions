@@ -45,6 +45,9 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [ziozzang/EverythingLM-data-V2-Ko](https://huggingface.co/datasets/ziozzang/EverythingLM-data-V2-Ko) | 1k | 싱글턴 | [EverythingLM-data-V2](https://huggingface.co/datasets/totally-not-an-llm/EverythingLM-data-V2)를 DeepL로 번역 |
 | [human-rights-corpus/HRC/](https://github.com/human-rights-corpus/HRC/) | 1.5k | 싱글턴 | 대화형 생성 모델을 위한 인권코퍼스 구축 - 대한민국 [국가인권위원회](https://case.humanrights.go.kr/dici/diciList.do)의 결정례와 상담사례 참조, 문체 변경과 질의 응답으로 변경하기 위해서 전후 맥락을 고려한 예시문을 만들고 GPT-3.5-turbo 을 이용하여 원샷 학습후 문답 생성 |
 | [kyujinpy/OpenOrca-KO](https://huggingface.co/datasets/kyujinpy/OpenOrca-KO) | 21.6k | 싱글턴 | [OpenOrca](https://huggingface.co/datasets/Open-Orca/OpenOrca) dataset 중 약 2만개를 sampling하여 번역한 데이터셋 |
+| [kyujinpy/KoCoT_2000](https://huggingface.co/datasets/kyujinpy/KoCoT_2000) | 2.16k | 싱글턴 | Using DeepL dataset, translation about [kaist-CoT](https://huggingface.co/datasets/kaist-ai/CoT-Collection). |
+| [RLHF-Korean-Friendly-LLM](https://github.com/VAIV-2023/RLHF-Korean-Friendly-LLM) | 2.4K(SFT), 3.8K(RM), 3.6K(RLHF) | 싱글턴 | 다양한 데이터를 수집하여 RLHF를 위한 천개 단위의 데이터셋 구축 |
+
 HAERAE-HUB 데이터셋들은 설명이 없어서 어떤 데이터인지 잘 모르겠네요.
 
 ## 평가용 데이터셋
