@@ -35,6 +35,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [CounselGPT](https://github.com/MrBananaHuman/CounselGPT) | 싱글턴(13k)<br/>멀티턴(8.7k) | 멀티턴, 싱글턴 | GPT로 생성한 상담 데이터 |
 | [Evolve-instruct](https://github.com/lcw99/evolve-instruct/) | 37k | 싱글턴 | [WizardLM]()에서 사용된 evol-instruct를 이용하여 instruction을 증강한 후 GP로 답변 생성한 데이터 |
 | [KULLM v2](https://huggingface.co/datasets/nlpai-lab/kullm-v2) | 153k | 싱글턴 | GPT4ALL, Dolly, Vicuna(ShareGPT) 데이터를 DeepL로 번역 |
+| [nlpai-lab/openassistant-guanaco-ko](https://huggingface.co/datasets/nlpai-lab/openassistant-guanaco-ko) | 9.85k | 멀티턴 | Korean translation of Guanaco via the DeepL API |
 | [psymon/namuwiki_alpaca_dataset](https://huggingface.co/datasets/psymon/namuwiki_alpaca_dataset/) | 79K | 싱글턴 | 나무위키 덤프 파일을 Stanford Alpaca 학습에 맞게 수정한 데이터셋 |
 | [changpt/ko-lima-vicuna](https://huggingface.co/datasets/changpt/ko-lima-vicuna) | 1k | 싱글턴, 멀티턴(극히 일부) | GPT4 API를 사용하여 lima_vicuna_format 데이터를 한국어로 재생성한 데이터셋 |
 | [taeshahn/ko-lima](https://huggingface.co/datasets/taeshahn/ko-lima) | 1k | 싱글턴, 멀티턴(극히 일부) | [LIMA: Less Is More for Alignment](https://arxiv.org/abs/2305.11206) (Zhou et al., 2023)의 [학습 데이터](https://huggingface.co/datasets/GAIR/lima)를 한국어로 번역한 데이터셋 |
@@ -47,6 +48,9 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [kyujinpy/OpenOrca-KO](https://huggingface.co/datasets/kyujinpy/OpenOrca-KO) | 21.6k | 싱글턴 | [OpenOrca](https://huggingface.co/datasets/Open-Orca/OpenOrca) dataset 중 약 2만개를 sampling하여 번역한 데이터셋 |
 | [kyujinpy/KoCoT_2000](https://huggingface.co/datasets/kyujinpy/KoCoT_2000) | 2.16k | 싱글턴 | Using DeepL dataset, translation about [kaist-CoT](https://huggingface.co/datasets/kaist-ai/CoT-Collection). |
 | [RLHF-Korean-Friendly-LLM](https://github.com/VAIV-2023/RLHF-Korean-Friendly-LLM) | 2.4K(SFT), 3.8K(RM), 3.6K(RLHF) | 싱글턴 | 다양한 데이터를 수집하여 RLHF를 위한 천개 단위의 데이터셋 구축 |
+| [jojo0217/korean_rlhf_dataset](https://huggingface.co/datasets/jojo0217/korean_rlhf_dataset) | 107k | 싱글턴 | 성균관대학교 산학협력프로젝트 과정에서 한국어 llm 모델 SFT 학습을 위해 구축한 데이터셋 입니다. | 
+| [maywell/ko_hh-rlhf-20k_filtered](https://huggingface.co/datasets/maywell/ko_hh-rlhf-20k_filtered) | 20k | 멀티턴, RM | hh-rlhf 데이터셋 중 20k를 synatra-translation 모델로 번역 |
+| [squarelike/OpenOrca-gugugo-ko](https://huggingface.co/datasets/squarelike/OpenOrca-gugugo-ko) | 640k + (번역중) | 싱글턴 | [Gugugo-koen-7B-V1.1](https://huggingface.co/squarelike/Gugugo-koen-7B-V1.1)을 이용하여 [OpenOrca](https://huggingface.co/datasets/Open-Orca/OpenOrca)데이터셋을 번역 중 |
 
 HAERAE-HUB 데이터셋들은 설명이 없어서 어떤 데이터인지 잘 모르겠네요.
 
