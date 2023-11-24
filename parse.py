@@ -79,6 +79,28 @@ def write_to_file(iterable, item_handler, filename):
     fout.close()
 
 
+def process_alpaca_format(dataset, output_name, inst_key="instruction", output_key="output", input_key="input"):
+    def handler(item):
+        output = [
+            {
+                "from": "human",
+                "value": item[inst_key]
+            },
+            {
+                "from": "bot",
+                "value": item[output_key]
+            }
+        ]
+        item_input = item.get(input_key, "")
+        if item_input and item_input != "nan":
+            output.insert(0, {
+                "from": "input",
+                "value": item_input
+            })
+
+        return output
+
+    write_to_file(dataset, handler, output_name)
 
 @click.group()
 def cli():
@@ -160,28 +182,7 @@ def korquadchat():
 @cli.command()
 def koinstruct_qa():
     dataset = load_dataset("HAERAE-HUB/KoInstruct-QA", split="train")
-
-    def handler(item):
-        output = [
-            {
-                "from": "human",
-                "value": item["instruction"]
-            },
-            {
-                "from": "bot",
-                "value": item["output"]
-            }
-        ]
-        item_input = item.get("input", "nan")
-        if item_input != "nan":
-            output.insert(0, {
-                "from": "input",
-                "value": item_input
-            })
-
-        return output
-
-    write_to_file(dataset, handler, "koinstruct_qa")
+    process_alpaca_format(dataset, "koinstruct_qa")
 
 @cli.command()
 def kowow():
@@ -234,7 +235,7 @@ def kowow():
 
 
 @cli.command()
-def kullm_v2():
+def kullm_v2_dolly_gpt4all():
     dataset = load_dataset("nlpai-lab/kullm-v2", split="train")
     def filter_fn(item):
         if "dolly" in item["id"]:
@@ -245,35 +246,13 @@ def kullm_v2():
             return False
         
     dataset = dataset.filter(filter_fn)
-
-    def handler(item):
-        output = [
-            {
-                "from": "human",
-                "value": item["instruction"]
-            },
-            {
-                "from": "bot",
-                "value": item["output"]
-            }
-        ]
-        item_input = item.get("input", "")
-        if item_input != "":
-            output.insert(0, {
-                "from": "input",
-                "value": item_input
-            })
-
-        return output
-    
-    write_to_file(dataset, handler, "kullm_v2")
+    process_alpaca_format(dataset, "kullm_v2")
 
 @cli.command()
 def sharegpt_clean_nocode():
-    url = "https://huggingface.co/datasets/dbdu/ShareGPT-74k-ko/resolve/main/part2_ko_uncleaned.json"
-    items = json.loads(requests.get(url).text)
-    # with jsonlines.open("sharegpt_clean_nocode.json") as items:
-    write_to_file(items, None, "sharegpt_clean_nocode")
+    # url = "https://huggingface.co/datasets/dbdu/ShareGPT-74k-ko/resolve/main/part2_ko_cleaned.json?download=true"
+    dataset = load_dataset("dbdu/ShareGPT-74k-ko", data_files={"train": "part2_ko_cleaned.json"})["train"]
+    write_to_file(dataset, None, "sharegpt_clean_nocode")
 
 @cli.command()
 def kolima():
@@ -315,6 +294,37 @@ def koalpaca_v1_1():
     items = load_jsonl_text(requests.get("https://raw.githubusercontent.com/Beomi/KoAlpaca/main/KoAlpaca_v1.1.jsonl").text)
     write_to_file(items, handler, "koalpaca_v1.1")
 
+@cli.command()
+def kocot_2000():
+    dataset = load_dataset("kyujinpy/KoCoT_2000", split="train")
+    process_alpaca_format(dataset, "kocot_2000", inst_key="source", output_key="rationale")
 
+
+@cli.command()
+def openorca_ko():
+    dataset = load_dataset("kyujinpy/OpenOrca-KO", split="train")
+    process_alpaca_format(dataset, "openorca_ko")
+
+@cli.command()
+def wikiqa_dedup():
+    dataset = load_dataset("HumanF-MarkrAI/WIKI_QA_Near_dedup", split="train")
+    process_alpaca_format(dataset, "wikiqa_dedup")
+    
+@cli.command()
+def kopen_platypus():
+    dataset = load_dataset("kyujinpy/KOpen-platypus", split="train")
+    process_alpaca_format(dataset, "kopen_platypus")
+
+@cli.command()
+def hrc():
+    dataset = load_dataset("heegyu/HRC", split="train")
+    process_alpaca_format(dataset, "hrc", inst_key="질의", output_key="상담례, 결정례 기반 답변")
+
+@cli.command()
+def kor_ethical_question_answer():
+    dataset = load_dataset("MrBananaHuman/kor_ethical_question_answer", split="train")
+    dataset = dataset.filter(lambda x: x["label"] == 0)
+    process_alpaca_format(dataset, "kor_ethical_question_answer", inst_key="question", output_key="answer")
+    
 if __name__ == "__main__":
     cli()
