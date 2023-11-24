@@ -52,6 +52,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [maywell/ko_hh-rlhf-20k_filtered](https://huggingface.co/datasets/maywell/ko_hh-rlhf-20k_filtered) | 20k | 멀티턴, RM | hh-rlhf 데이터셋 중 20k를 synatra-translation 모델로 번역 |
 | [squarelike/OpenOrca-gugugo-ko](https://huggingface.co/datasets/squarelike/OpenOrca-gugugo-ko) | 640k + (번역중) | 싱글턴 | [Gugugo-koen-7B-V1.1](https://huggingface.co/squarelike/Gugugo-koen-7B-V1.1)을 이용하여 [OpenOrca](https://huggingface.co/datasets/Open-Orca/OpenOrca)데이터셋을 번역 중 |
 | [maywell/ko_Ultrafeedback_binarized](https://huggingface.co/datasets/maywell/ko_Ultrafeedback_binarized) | 62k (RM) | 싱글턴 | Synatra-7B-Translation 모델을 통해 Ultrafeedback_binarized를 번역하고 정제한 데이터셋입니다. |
+| [MrBananaHuman/kor_ethical_question_answer](https://huggingface.co/datasets/MrBananaHuman/kor_ethical_question_answer) | 29.1k | 싱글턴 | RLHF 학습을 위한 AI 윤리적/비윤리적 질의-답변 데이터셋 |
 
 ## 평가용 데이터셋
 | 이름 | # | 타입 | 내용 |
