@@ -56,7 +56,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [HumanF-MarkrAI/WIKI_QA_Near_dedup](https://huggingface.co/datasets/HumanF-MarkrAI/WIKI_QA_Near_dedup) | 138k | 싱글턴 | maywell(Jeonghwan Park)께서 만드신 maywell/wikidata_QA 에서 deduplication한 QA 데이터 |
 | [kaist-ai/Multilingual-CoT-Collection](https://huggingface.co/datasets/kaist-ai/Multilingual-CoT-Collection) | 77.2k | 싱글턴 | KAIST에서 공개한 다국어 CoT collection, 한국어 77.2k 포함 |
 | [heegyu/PKU-SafeRLHF-ko](https://huggingface.co/datasets/heegyu/PKU-SafeRLHF-ko) | 164k(RM)| 싱글턴 | [PKU-Alignment/PKU-SafeRLHF](https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF) 데이터 번역 중 |
-| [heegyu/hh-rlhf-ko](https://huggingface.co/datasets/heegyu/hh-rlhf-ko) | 113k(RM) | 싱글턴 | [Anthropic/hh-rlhf](https://huggingface.co/datasets/Anthropic/hh-rlhf) 데이터 번역 중 |
+| [heegyu/hh-rlhf-ko](https://huggingface.co/datasets/heegyu/hh-rlhf-ko) | 113k(RM) | 멀티턴 | [Anthropic/hh-rlhf](https://huggingface.co/datasets/Anthropic/hh-rlhf) 데이터 번역 중 |
 | [heegyu/webgpt_comparisons_ko](https://huggingface.co/datasets/heegyu/webgpt_comparisons_ko) | 19.6k(RM) | 싱글턴 | [openai/webgpt_comparisons](https://huggingface.co/datasets/openai/webgpt_comparisons)를 모델로 번역 |
 
 ## 평가용 데이터셋
