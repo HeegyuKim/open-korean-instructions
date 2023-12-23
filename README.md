@@ -58,6 +58,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [heegyu/PKU-SafeRLHF-ko](https://huggingface.co/datasets/heegyu/PKU-SafeRLHF-ko) | 164k(RM)| 싱글턴 | [PKU-Alignment/PKU-SafeRLHF](https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF) 데이터 번역 중 |
 | [heegyu/hh-rlhf-ko](https://huggingface.co/datasets/heegyu/hh-rlhf-ko) | 113k(RM) | 멀티턴 | [Anthropic/hh-rlhf](https://huggingface.co/datasets/Anthropic/hh-rlhf) 데이터 번역 중 |
 | [heegyu/webgpt_comparisons_ko](https://huggingface.co/datasets/heegyu/webgpt_comparisons_ko) | 19.6k(RM) | 싱글턴 | [openai/webgpt_comparisons](https://huggingface.co/datasets/openai/webgpt_comparisons)를 모델로 번역 |
+| [heegyu/glaive-function-calling-v2-ko](https://huggingface.co/datasets/heegyu/glaive-function-calling-v2-ko) | 15.2k (Function Calling) | 멀티턴 | [glaiveai/glaive-function-calling-v2](https://huggingface.co/datasets/glaiveai/glaive-function-calling-v2) 중에서 15.2k 개를 ChatGPT로 번역 |
 
 ## 평가용 데이터셋
 | 이름 | # | 타입 | 내용 |
