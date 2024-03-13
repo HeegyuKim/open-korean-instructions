@@ -60,37 +60,15 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [heegyu/webgpt_comparisons_ko](https://huggingface.co/datasets/heegyu/webgpt_comparisons_ko) | 19.6k(RM) | 싱글턴 | [openai/webgpt_comparisons](https://huggingface.co/datasets/openai/webgpt_comparisons)를 모델로 번역 |
 | [heegyu/glaive-function-calling-v2-ko](https://huggingface.co/datasets/heegyu/glaive-function-calling-v2-ko) | 15.2k (Function Calling) | 멀티턴 | [glaiveai/glaive-function-calling-v2](https://huggingface.co/datasets/glaiveai/glaive-function-calling-v2) 중에서 15.2k 개를 ChatGPT로 번역 |
 | [squarelike/ko_medical_chat](https://huggingface.co/datasets/squarelike/ko_medical_chat) | 3.04k | 멀티턴 | [jwj7140/ko-medical-chat](https://github.com/jwj7140/ko-medical-chat) [MedText](https://huggingface.co/datasets/BI55/MedText)와 [ChatDoctor](https://github.com/Kent0n-Li/ChatDoctor) 데이터셋을 GPT3.5를 통해 한국어 대화로 변환 |
-
+| [MarkrAI/KoCommercial-Dataset](https://huggingface.co/datasets/MarkrAI/KoCommercial-Dataset) | 1.44M | 싱글턴 | 상업적으로 이용 가능한 데이터셋들을 수집 및 가공하여 하나로 병합 |
 
 ## 평가용 데이터셋
 | 이름 | # | 타입 | 내용 |
 |---|---|---|---|
-| [HAETAE-project/HAE-RAE-BENCH](https://github.com/HAETAE-project/HAE-RAE-BENCH) | 1.5k | ? | HAE-RAE Bench는 언어 모델의 한국어 능력(어휘, 역사, 상식, 독해)을 평가하기 위해 제작된 벤치마크 데이터셋입니다. |
-| [HAERAE-HUB/CSAT-QA](https://huggingface.co/datasets/HAERAE-HUB/CSAT-QA) | 0.9k | 싱글턴, 객관식 | 국어 수능문제 |
+| [HAERAE-HUB/KMMLU](https://huggingface.co/datasets/HAERAE-HUB/KMMLU) | 243k | MCQA | 45개 주제의 전문가 수준 한국어 성능 평가 벤치마크 |
+| [HAETAE-project/HAE-RAE-BENCH](https://github.com/HAETAE-project/HAE-RAE-BENCH) | 1.5k | MCQA | HAE-RAE Bench는 언어 모델의 한국어 능력(어휘, 역사, 상식, 독해)을 평가하기 위해 제작된 벤치마크 데이터셋입니다. |
+| [HAERAE-HUB/CSAT-QA](https://huggingface.co/datasets/HAERAE-HUB/CSAT-QA) | 0.9k | MCQA | 국어 수능문제 |
+| [sean0042/KorMedMCQA](https://huggingface.co/datasets/sean0042/KorMedMCQA) | < 1k | MCQA | 한국어 의료 QA 벤치마크 |
 
 
-### 그 외 instruction은 아니지만..
-- [smilegate-ai/HuLiC](https://github.com/smilegate-ai/HuLiC)
-- [smilegate-ai/OPELA](https://github.com/smilegate-ai/OPELA)
 
-
-## 데이터 생성 코드
-일부 데이터는 번역되거나 ChatGPT를 통해 생성했습니다.<br/>
-`src/`에 있는 코드를 이용하여 데이터를 생성할 수 있습니다.
-
-### Translate API를 이용하여 번역
-```bash
-python translate.py --max-items 10000 --batch-size 8 oig-smallchip2 ../data/oig-smallchip2.jsonl
-
-# google은 비싸요 ㅠ. 기본 chatgpt
-python translate.py --max-items 10000 --batch-size 8 --translator google oig-smallchip2 ../data/oig-smallchip2.jsonl
-```
-
-### ChatGPT로 지식기반대화 생성
-```bash
-python generate_kg_dialogue.py --max-items 10000 --batch-size 1 --num_process 4 korquad-v1 ../data/korquad-chat.jsonl
-```
-
-주의사항
-- 서로를 A씨, B씨로 호칭합니다. 추후 전처리가 필요합니다.
-- 할루시네이션이 있을 수 있습니다. 최대한 없애고자 주어진 정보 내에서만 대화하도록 프롬프트를 구성했습니다.
