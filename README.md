@@ -70,5 +70,9 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [HAERAE-HUB/CSAT-QA](https://huggingface.co/datasets/HAERAE-HUB/CSAT-QA) | 0.9k | MCQA | 국어 수능문제 |
 | [sean0042/KorMedMCQA](https://huggingface.co/datasets/sean0042/KorMedMCQA) | < 1k | MCQA | 한국어 의료 QA 벤치마크 |
 
+## 평가 플랫폼
+- [Ko Chatbot Arena Leaderboard](https://huggingface.co/spaces/instructkr/ko-chatbot-arena-leaderboard): 사람이 여러 챗봇의 결과를 비교해보고 그 승률과 ELO 점수를 보여주는 리더보드
+- [ko-RM-judge](https://github.com/HeegyuKim/ko-rm-judge): 보상 모델(Reward Model)을 이용하여 챗봇의 대답을 평가하고, 그 점수를 비교
+
 
 
