@@ -61,7 +61,8 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [heegyu/glaive-function-calling-v2-ko](https://huggingface.co/datasets/heegyu/glaive-function-calling-v2-ko) | 15.2k (Function Calling) | 멀티턴 | [glaiveai/glaive-function-calling-v2](https://huggingface.co/datasets/glaiveai/glaive-function-calling-v2) 중에서 15.2k 개를 ChatGPT로 번역 |
 | [squarelike/ko_medical_chat](https://huggingface.co/datasets/squarelike/ko_medical_chat) | 3.04k | 멀티턴 | [jwj7140/ko-medical-chat](https://github.com/jwj7140/ko-medical-chat) [MedText](https://huggingface.co/datasets/BI55/MedText)와 [ChatDoctor](https://github.com/Kent0n-Li/ChatDoctor) 데이터셋을 GPT3.5를 통해 한국어 대화로 변환 |
 | [MarkrAI/KoCommercial-Dataset](https://huggingface.co/datasets/MarkrAI/KoCommercial-Dataset) | 1.44M | 싱글턴 | 상업적으로 이용 가능한 데이터셋들을 수집 및 가공하여 하나로 병합 |
-[ [maywell/koVast](https://huggingface.co/datasets/maywell/koVast) | 685K | 멀티턴 | 685K의 대규모 멀티턴 한국어 대화 |
+| [maywell/koVast](https://huggingface.co/datasets/maywell/koVast) | 685K | 멀티턴 | 685K의 대규모 멀티턴 한국어 대화 |
+| [SJ-Donald/orca-dpo-pairs-ko](https://huggingface.co/datasets/SJ-Donald/orca-dpo-pairs-ko) | 36K | 싱글턴 | [mncai/orca_dpo_pairs_ko](https://huggingface.co/datasets/mncai/orca_dpo_pairs_ko), [Ja-ck/Orca-DPO-Pairs-KO](https://huggingface.co/datasets/Ja-ck/Orca-DPO-Pairs-KO), [We-Want-GPU/Yi-Ko-DPO-Orca-DPO-Pairs](https://huggingface.co/datasets/We-Want-GPU/Yi-Ko-DPO-Orca-DPO-Pairs) 3개의 DPO 데이터셋 병합 후 중복 제거 |
 
 ## 평가용 데이터셋
 | 이름 | # | 타입 | 내용 |
@@ -73,6 +74,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 
 ## 평가 플랫폼
 - [Ko Chatbot Arena Leaderboard](https://huggingface.co/spaces/instructkr/ko-chatbot-arena-leaderboard): 사람이 여러 챗봇의 결과를 비교해보고 그 승률과 ELO 점수를 보여주는 리더보드
+- [instructkr/LogicKor-leaderboard](https://huggingface.co/spaces/instructkr/LogicKor-leaderboard): 한국어 언어모델 다분야 사고력 벤치마크
 - [ko-RM-judge](https://github.com/HeegyuKim/ko-rm-judge): 보상 모델(Reward Model)을 이용하여 챗봇의 대답을 평가하고, 그 점수를 비교
 
 
