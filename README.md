@@ -61,6 +61,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [heegyu/glaive-function-calling-v2-ko](https://huggingface.co/datasets/heegyu/glaive-function-calling-v2-ko) | 15.2k (Function Calling) | 멀티턴 | [glaiveai/glaive-function-calling-v2](https://huggingface.co/datasets/glaiveai/glaive-function-calling-v2) 중에서 15.2k 개를 ChatGPT로 번역 |
 | [squarelike/ko_medical_chat](https://huggingface.co/datasets/squarelike/ko_medical_chat) | 3.04k | 멀티턴 | [jwj7140/ko-medical-chat](https://github.com/jwj7140/ko-medical-chat) [MedText](https://huggingface.co/datasets/BI55/MedText)와 [ChatDoctor](https://github.com/Kent0n-Li/ChatDoctor) 데이터셋을 GPT3.5를 통해 한국어 대화로 변환 |
 | [MarkrAI/KoCommercial-Dataset](https://huggingface.co/datasets/MarkrAI/KoCommercial-Dataset) | 1.44M | 싱글턴 | 상업적으로 이용 가능한 데이터셋들을 수집 및 가공하여 하나로 병합 |
+[ [maywell/koVast](https://huggingface.co/datasets/maywell/koVast) | 685K | 멀티턴 | 685K의 대규모 멀티턴 한국어 대화 |
 
 ## 평가용 데이터셋
 | 이름 | # | 타입 | 내용 |
