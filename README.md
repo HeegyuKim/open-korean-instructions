@@ -70,11 +70,13 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [HAERAE-HUB/KMMLU](https://huggingface.co/datasets/HAERAE-HUB/KMMLU) | 243k | MCQA | 45개 주제의 전문가 수준 한국어 성능 평가 벤치마크 |
 | [HAETAE-project/HAE-RAE-BENCH](https://github.com/HAETAE-project/HAE-RAE-BENCH) | 1.5k | MCQA | HAE-RAE Bench는 언어 모델의 한국어 능력(어휘, 역사, 상식, 독해)을 평가하기 위해 제작된 벤치마크 데이터셋입니다. |
 | [HAERAE-HUB/CSAT-QA](https://huggingface.co/datasets/HAERAE-HUB/CSAT-QA) | 0.9k | MCQA | 국어 수능문제 |
+| [HAERAE-HUB/K2-Eval](https://huggingface.co/datasets/HAERAE-HUB/K2-Eval) | 90 | 생성 | 정확한 답변을 위해서는 한국어 문화에 대한 깊이 있는 지식이 필요한 90개의 사람이 작성한 지시문, 사람 혹은 GPT-4가 평가 |
 | [sean0042/KorMedMCQA](https://huggingface.co/datasets/sean0042/KorMedMCQA) | < 1k | MCQA | 한국어 의료 QA 벤치마크 |
 
 ## 평가 플랫폼
 - [Ko Chatbot Arena Leaderboard](https://huggingface.co/spaces/instructkr/ko-chatbot-arena-leaderboard): 사람이 여러 챗봇의 결과를 비교해보고 그 승률과 ELO 점수를 보여주는 리더보드
 - [instructkr/LogicKor-leaderboard](https://huggingface.co/spaces/instructkr/LogicKor-leaderboard): 한국어 언어모델 다분야 사고력 벤치마크
+- [호랑이 LLM 리더보드](https://wandb.ai/wandb-korea/korean-llm-leaderboard/reports/-LLM---Vmlldzo3MzIyNDE2?accessToken=95bffmg3gwblgohulknz7go3h66k11uqn1l3ytjma1uj3w0l0dwh1fywgsgpbdyy): wandb에서 공개한 Q&A, 멀티턴 형식의 한국어 LLM 평가 리더보드
 - [ko-RM-judge](https://github.com/HeegyuKim/ko-rm-judge): 보상 모델(Reward Model)을 이용하여 챗봇의 대답을 평가하고, 그 점수를 비교
 
 
