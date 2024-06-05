@@ -7,6 +7,7 @@ import copy
 from tqdm.auto import tqdm
 import requests
 import transformers
+from copy import deepcopy
 from transformers import GenerationConfig
 
 import jax, flax
@@ -113,7 +114,7 @@ class FlaxHuggingfaceModel(BaseLanguageModel):
                 "matching partition rules"
             )
             partition_specs = match_partition_rules(params=params, rules=get_partition_rules(flax_model.config, fully_sharded_data_parallel=fully_sharded_data_parallel))
-            shard_fns, _ = make_shard_and_gather_fns(partition_specs, get_dtype(dtype))
+            shard_fns, _ = make_shard_and_gather_fns(partition_specs, self.mesh, get_dtype(dtype))
             logging.info(
                 "sharding parameters across all of the chosen backend(tpu/gpu/cpu)s"
             )
@@ -219,6 +220,7 @@ class FlaxHuggingfaceModel(BaseLanguageModel):
                gen_args: dict,
                ):
         fixed_pad = self.prompt_length
+
         tokens = self.prefix_tokenizer(
             prompts,
             max_length=fixed_pad,
@@ -247,15 +249,21 @@ class FlaxHuggingfaceModel(BaseLanguageModel):
             )
 
         output = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
-        print(self.tokenizer.decode(input_ids[0], skip_special_tokens=False).replace(self.tokenizer.pad_token, ""))
-        print(output)
+        prompts = self.tokenizer.batch_decode(input_ids, skip_special_tokens=False)
+        for prompt, out in zip(prompts, output):
+            print(prompt.replace(self.tokenizer.pad_token, ""))
+            print("-->", out)
+            print("-----")
+
         return outputs
 
     def generate_batch(self, prompts, histories = None, generation_prefix: str = None, gen_args = {}):
         assert len(prompts) <= self.batch_size
-
+        
         if histories is None:
             histories = [[] for _ in prompts]
+        else:
+            histories = deepcopy(histories)
 
         final_prompts = []
         for prompt, history in zip(prompts, histories):
@@ -279,6 +287,9 @@ class FlaxHuggingfaceModel(BaseLanguageModel):
     def generate(self, prompt, history = None, generation_prefix: str = None, gen_args = {}):
         if history is None:
             history = []
+        else:
+            history = deepcopy(history)
+
         history.append({
             'role': 'user',
             'content': prompt,

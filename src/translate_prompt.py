@@ -6,6 +6,8 @@ from datasets import load_dataset, Dataset
 from tqdm import tqdm
 import jsonlines
 import time
+from pprint import pprint
+
 
 
 def load_target_dataset(name):
@@ -18,9 +20,8 @@ def load_target_dataset(name):
         print(len(df), "items in dataset")
         return df, ["instruction"]
     elif name == "openbmb/UltraFeedback":
-        ds = load_dataset("openbmb/UltraFeedback", split="train"), ["instruction"]
+        ds = load_dataset("openbmb/UltraFeedback", split="train")
         df = ds.to_pandas()
-        df["instruction"] = df.trajectory.apply(lambda x: x[0]['value'])
         df = df.drop_duplicates(subset=["instruction"])
         df = Dataset.from_pandas(df)
         print(len(df), "items in dataset")
@@ -33,9 +34,9 @@ def main(
     output_file: str = None,
     chat_template: str = None,
     dataset: str = "openbmb/UltraInteract_pair",
-    prompt_length: int = 1024,
-    max_length: int = 2048,
-    batch_size: int = 4,
+    prompt_length: int = 2048,
+    max_length: int = 4096,
+    batch_size: int = 2,
     eos_token: str = None,
 ):
     model_name = model
@@ -55,18 +56,16 @@ def main(
         print(f"Skipping {skip_length} examples")
 
     fout = jsonlines.open(output_file, "a")
-    system_prompt = [{"role": "system", "content": "주어진 문장을 한국어로 번역하세요."}]
 
     for batch in tqdm(batched_iteration(dataset, batch_size=batch_size), total=len(dataset)//batch_size):
         for key in keys:
-            prompts = ["Hello!\n" + x[key] for x in batch]
-
-            responses = model.generate_batch(prompts, histories=[system_prompt] * len(batch), gen_args=gen_args, generation_prefix="안녕하세요!\n")
+            prompts = ["Hello! " + x[key] for x in batch]
+            histories = [[{"role": "system", "content": "주어진 문장을 한국어로 번역하세요."}] for _ in range(len(batch))]
+            responses = model.generate_batch(prompts, histories=histories, gen_args=gen_args, generation_prefix="안녕하세요!")
 
             for item, response in zip(batch, responses):
                 item[f"{key}_ko"] = response
-
-
+    
         for item, response in zip(batch, responses):
             item["generator"] = model_name
             item["dataset_name"] = dataset_name
