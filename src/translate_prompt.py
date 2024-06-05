@@ -11,6 +11,14 @@ from pprint import pprint
 
 
 def load_target_dataset(name):
+    if name == "openbmb/UltraInteract_sft":
+        ds = load_dataset("openbmb/UltraInteract_sft", split="train")
+        df = ds.to_pandas()
+        df = df.drop_duplicates(subset=["instruction"])
+        df = Dataset.from_pandas(df)
+        print(len(df), "items in dataset")
+        return df, ["instruction"]
+
     if name == "openbmb/UltraInteract_pair":
         ds = load_dataset("openbmb/UltraInteract_pair", split="train")
         df = ds.to_pandas()
