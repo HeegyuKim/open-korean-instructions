@@ -2,6 +2,8 @@
 from .base import BaseLanguageModel
 from .judge_model import BaseJudge
 import os
+import retry
+
 
 
 class OpenAIModel(BaseLanguageModel, BaseJudge):
@@ -49,8 +51,11 @@ class GeminiModel(BaseLanguageModel):
         genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
         self.model = genai.GenerativeModel(model)
 
+    @retry.retry(tries=3, delay=10)
     def generate(self, prompt, history = None, generation_prefix: str = None, gen_args = {}):
         import google.generativeai as genai
+        from google.generativeai.types import HarmCategory, HarmBlockThreshold
+
         if generation_prefix:
             raise NotImplementedError("Generation prefix is not supported by Gemini model")
         
@@ -58,8 +63,22 @@ class GeminiModel(BaseLanguageModel):
             max_output_tokens=gen_args.get("max_new_tokens", 128),
             temperature=gen_args.get("temperature", 1.0),
         )
-        response = self.model.generate_content(prompt, generation_config=generation_config)
-        return response.text
+        response = self.model.generate_content(
+            prompt, 
+            generation_config=generation_config,
+            safety_settings={
+                HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
+                # HarmCategory.HARM_CATEGORY_TOXICITY: HarmBlockThreshold.BLOCK_NONE,
+            }
+        )
+        print(response)
+        try:
+            return response.text
+        except:
+            return f"Gemini Refusal!!! {response.prompt_feedback}"
 
     def moderate(self, instruction, response = None, gen_args: dict = None):
         if response:
