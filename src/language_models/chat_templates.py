@@ -47,14 +47,14 @@ KOLLAMAGUARD = "{{ bos_token }} {% if messages|length % 2 == 0 %}{% set role = '
 TEMPLATE_ZEPHYR = "{% for message in messages %}\n{% if message['role'] == 'user' %}\n{{ '<|user|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'system' %}\n{{ '<|system|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'assistant' %}\n{{ '<|assistant|>\n'  + message['content'] + eos_token }}\n{% endif %}\n{% if loop.last and add_generation_prompt %}\n{{ '<|assistant|>' }}\n{% endif %}\n{% endfor %}"
 TEMPLATE_CHATML = "{% for message in messages %}{% if message['role'] == 'user' %}{{ '<|im_start|>user\n' }}{% elif message['role'] == 'assistant' %}{{ '<|im_start|>assistant\n' }}{% endif %}{{ message['content'] + '<|im_end|>\n' }}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant:\n' }}{% endif %}"
 
-EEVE = """{% if messages[0]['role'] == 'system' %}{% set loop_messages = messages[1:] %}{% set system_message = messages[0]['content'] %}{% else %}{% set loop_messages = messages %}{% set system_message = 'A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions.' %}{% endif %}
+EEVE = """{% if messages[0]['role'] == 'system' %}{% set loop_messages = messages[1:] %}{% set system_message = messages[0]['content'] %}{% else %}{% set loop_messages = messages %}{% set system_message = 'A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user\\'s questions.' %}{% endif %}
 {% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}
 {% for message in loop_messages %}
-    {% if message['role'] == 'user' %}
-        {{ 'Human:' + message['content'] }}
-    {% elif message['role'] == 'assistant' %}
-        {{ 'Assistant:\n'  + message['content'] + eos_token }}
-    {% endif %}
+{% if message['role'] == 'user' %}
+{{ 'Human:' + message['content'] }}
+{% elif message['role'] == 'assistant' %}
+    {{ 'Assistant:\n'  + message['content'] + eos_token }}
+{% endif %}
 {% endfor %}
 {% if add_generation_prompt %}{{ 'Assistant:\n' }}{% endif %}"""
 
