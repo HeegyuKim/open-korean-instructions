@@ -13,7 +13,7 @@ def load_model(
     if model_name.startswith("openai"):
         from .api_model import OpenAIModel
         return OpenAIModel()
-    elif model_name.startswith("google"):
+    elif model_name.startswith("google/gemini"):
         from .api_model import GeminiModel
         return GeminiModel(model_name.split("/", 1)[1])
     else:
