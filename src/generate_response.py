@@ -45,7 +45,7 @@ def main(
 
         if "system" in batch[0]:
             if "gemma" in model_name:
-                prompts = [f"{x['system']}\n\n{x[prompt_key]}" for x in batch]
+                # prompts = [f"{x['system']}\n\n{x[prompt_key]}" for x in batch]
                 history = None
             else:
                 history = [[{"role": "system", "content": x.get("system")}] for x in batch]
