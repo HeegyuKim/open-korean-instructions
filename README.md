@@ -64,6 +64,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [maywell/koVast](https://huggingface.co/datasets/maywell/koVast) | 685K | 멀티턴 | 685K의 대규모 멀티턴 한국어 대화 |
 | [SJ-Donald/orca-dpo-pairs-ko](https://huggingface.co/datasets/SJ-Donald/orca-dpo-pairs-ko) | 36K | 싱글턴 | [mncai/orca_dpo_pairs_ko](https://huggingface.co/datasets/mncai/orca_dpo_pairs_ko), [Ja-ck/Orca-DPO-Pairs-KO](https://huggingface.co/datasets/Ja-ck/Orca-DPO-Pairs-KO), [We-Want-GPU/Yi-Ko-DPO-Orca-DPO-Pairs](https://huggingface.co/datasets/We-Want-GPU/Yi-Ko-DPO-Orca-DPO-Pairs) 3개의 DPO 데이터셋 병합 후 중복 제거 |
 | [lcw99/wikipedia-korean-20240501-1million-qna](https://huggingface.co/datasets/lcw99/wikipedia-korean-20240501-1million-qna) | 1M | 싱글턴QA | 한글 위키피디아를 백만개의 섹션으로 나누고 백만개의 q&a를 생성 |
+| [nlp-with-deeplearning/Ko.WizardLM_evol_instruct_V2_196k](https://huggingface.co/datasets/nlp-with-deeplearning/Ko.WizardLM_evol_instruct_V2_196k) | 196k | 싱글턴 | 자체 구축한 번역기로 WizardLM/WizardLM_evol_instruct_V2_196k을 번역한 데이터셋|
 
 ## 평가용 데이터셋
 | 이름 | # | 타입 | 내용 |
