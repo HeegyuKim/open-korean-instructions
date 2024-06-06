@@ -8,8 +8,8 @@ import time
 
 
 def get_prompt_dataset(name):
-    if name == "SJ-Donald/orca-dpo-pairs-ko":
-        return load_dataset("SJ-Donald/orca-dpo-pairs-ko", split="train"), "question"
+    if name == "mncai/orca_dpo_pairs_ko":
+        return load_dataset("mncai/orca_dpo_pairs_ko", split="train"), "question"
     else:
         raise ValueError(f"Unknown dataset: {name}")
 
@@ -17,7 +17,7 @@ def main(
     model: str,
     output_file: str = None,
     chat_template: str = None,
-    dataset: str = "SJ-Donald/orca-dpo-pairs-ko",
+    dataset: str = "mncai/orca_dpo_pairs_ko",
     prompt_length: int = 1024,
     max_length: int = 2048,
     batch_size: int = 4,
