@@ -18,8 +18,25 @@ def load_target_dataset(name):
         df = Dataset.from_pandas(df)
         print(len(df), "items in dataset")
         return df, ["instruction"]
+    elif name == "cognitivecomputations/WizardLM_evol_instruct_V2_196k_unfiltered_merged_split":
+        ds = load_dataset("cognitivecomputations/WizardLM_evol_instruct_V2_196k_unfiltered_merged_split", split="train")
+        rows = []
+        for index, item in enumerate(ds):
+            convs = item["conversations"]
+            for turn, conv in enumerate(convs):
+                if conv.get("value"):
+                    rows.append({"content": conv["value"], "turn": turn, "index": index, "from": conv.get("from"), "key": "value"})
+                if conv.get("markdown"):
+                    rows.append({"content": conv["markdown"]['answer'], "turn": turn, "index": index, "from": conv.get("from"), "key": "markdown"})
+                    print(conv["markdown"])
+                if conv.get("text"):
+                    rows.append({"content": conv["text"], "turn": turn, "index": index, "from": conv.get("from"), "key": "text"})
+                    print(conv["text"])
 
-    if name == "openbmb/UltraInteract_pair":
+        print(rows[0])
+        df = Dataset.from_list(rows)
+        return df, ["content"]
+    elif name == "openbmb/UltraInteract_pair":
         ds = load_dataset("openbmb/UltraInteract_pair", split="train")
         df = ds.to_pandas()
         df["instruction"] = df.trajectory.apply(lambda x: x[0]['value'])

@@ -1,15 +1,20 @@
 import fire
 from .language_models.utils import load_model
 from .utils.eval_utils import batched_iteration, estimate_skip_length
-from datasets import load_dataset
+from datasets import load_dataset, Dataset
 from tqdm import tqdm
 import jsonlines
 import time
+import pandas as pd
 
 
 def get_prompt_dataset(name):
     if name == "mncai/orca_dpo_pairs_ko":
         return load_dataset("mncai/orca_dpo_pairs_ko", split="train"), "question"
+    elif name == "ultrafeedback":
+        df = pd.read_json("data/ultrafeedback_instruct_ko_20k.jsonl", lines=True)
+        ds = Dataset.from_pandas(df)
+        return ds, "instruction_ko"
     else:
         raise ValueError(f"Unknown dataset: {name}")
 
@@ -22,7 +27,7 @@ def main(
     max_length: int = 2048,
     batch_size: int = 4,
     eos_token: str = None,
-    api_delay: int = 3
+    api_delay: int = 0
 ):
     model_name = model
     dataset_name = dataset
@@ -41,6 +46,11 @@ def main(
 
     fout = jsonlines.open(output_file, "a")
 
+    # if model_name.startswith("openai"):
+    #     additional_system_prompt = "\n\n대답을 할 때는 자연스럽고 유창한 한국말로 대답하세요."
+    # else:
+    #     additional_system_prompt = ""
+
     for batch in tqdm(batched_iteration(dataset, batch_size=batch_size), total=len(dataset)//batch_size):
         prompts = [x[prompt_key] for x in batch]
 
@@ -54,7 +64,11 @@ def main(
             history = None
 
         
-        responses = model.generate_batch(prompts, histories=history, gen_args=gen_args)
+        try: 
+            responses = model.generate_batch(prompts, histories=history, gen_args=gen_args)
+        except Exception as e:
+            print(f"Error: {e}")
+            continue
 
         for item, response in zip(batch, responses):
             item["response"] = response
