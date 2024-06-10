@@ -67,6 +67,8 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [nlp-with-deeplearning/Ko.WizardLM_evol_instruct_V2_196k](https://huggingface.co/datasets/nlp-with-deeplearning/Ko.WizardLM_evol_instruct_V2_196k) | 196k | 싱글턴 | 자체 구축한 번역기로 WizardLM/WizardLM_evol_instruct_V2_196k을 번역한 데이터셋 |
 | [HAERAE-HUB/qarv-instruct-100k](https://huggingface.co/datasets/HAERAE-HUB/qarv-instruct-100k) | 100k | 싱글턴 | 한국에 대한 지식이 필요한 지시문-답변 쌍 (영어 포함) |
 | [kuotient/orca-math-word-problems-193k-korean](https://huggingface.co/datasets/kuotient/orca-math-word-problems-193k-korean) | 193k | 싱글턴 | microsoft/orca-math-word-problems-200k 번역 |
+| [kuotient/orca-math-korean-preference](https://huggingface.co/datasets/kuotient/orca-math-korean-preference) | 193k | 싱글턴(DPO) | 번역된 microsoft/orca-math-word-problems-200k를 이용해 만든 DPO 데이터셋 |
+
 
 ## 평가용 데이터셋
 | 이름 | # | 타입 | 내용 |
