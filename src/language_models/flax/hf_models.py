@@ -114,7 +114,7 @@ class FlaxHuggingfaceModel(BaseLanguageModel):
                 "matching partition rules"
             )
             partition_specs = match_partition_rules(params=params, rules=get_partition_rules(flax_model.config, fully_sharded_data_parallel=fully_sharded_data_parallel))
-            shard_fns, _ = make_shard_and_gather_fns(partition_specs, self.mesh, get_dtype(dtype))
+            shard_fns, _ = make_shard_and_gather_fns(partition_specs, get_dtype(dtype))
             logging.info(
                 "sharding parameters across all of the chosen backend(tpu/gpu/cpu)s"
             )

@@ -18,8 +18,21 @@ def load_target_dataset(name):
         df = Dataset.from_pandas(df)
         print(len(df), "items in dataset")
         return df, ["instruction"]
-
-    if name == "openbmb/UltraInteract_pair":
+    elif name == "HuggingFaceH4/ultrachat_200k":
+        ds = load_dataset("HuggingFaceH4/ultrachat_200k", split="train_sft")
+        flatten_items = []
+        for item in ds:
+            for i, turn in enumerate(item["messages"]):
+                flatten_items.append(dict(
+                    content=turn["content"],
+                    role=turn["role"],
+                    idx=i,
+                    prompt_id=item["prompt_id"],
+                ))
+        df = Dataset.from_list(flatten_items)
+        print(len(df), "items in dataset")
+        return df, ["content"]
+    elif name == "openbmb/UltraInteract_pair":
         ds = load_dataset("openbmb/UltraInteract_pair", split="train")
         df = ds.to_pandas()
         df["instruction"] = df.trajectory.apply(lambda x: x[0]['value'])
