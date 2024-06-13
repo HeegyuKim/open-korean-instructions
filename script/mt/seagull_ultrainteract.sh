@@ -1,4 +1,3 @@
 
-mkdir -p data/
 python -m src.translate_prompt \
-    --model kuotient/Seagull-13b-translation --dataset openbmb/UltraInteract_pair
+    --model "Qwen/Qwen2-7B-Instruct" --dataset HuggingFaceH4/ultrachat_200k --batch_size 8
