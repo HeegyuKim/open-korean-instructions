@@ -16,7 +16,7 @@ def load_target_dataset(name):
         df = df.drop_duplicates(subset=["instruction"])
         df = Dataset.from_pandas(df)
         print(len(df), "items in dataset")
-        return df, ["instruction"]
+        return df, ["instruction", "response"]
     elif name == "HuggingFaceH4/ultrachat_200k":
         ds = load_dataset("HuggingFaceH4/ultrachat_200k", split="train_sft")
         flatten_items = []

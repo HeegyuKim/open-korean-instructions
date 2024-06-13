@@ -1,3 +1,3 @@
 
 python -m src.translate_prompt \
-    --model "Qwen/Qwen2-7B-Instruct" --dataset HuggingFaceH4/ultrachat_200k --batch_size 8
+    --model "Qwen/Qwen2-7B-Instruct" --dataset openbmb/UltraInteract_sft --batch_size 8
