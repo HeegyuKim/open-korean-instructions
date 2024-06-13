@@ -84,6 +84,7 @@ class FlaxHuggingfaceModel(BaseLanguageModel):
             config = pt_model.config
             if isinstance(config, transformers.MistralConfig):
                 config.sliding_window=4096
+            config.freq_max_position_embeddings = max_length
 
             flax_model = transformers.FlaxAutoModelForCausalLM.from_config(
                 config,
@@ -248,11 +249,11 @@ class FlaxHuggingfaceModel(BaseLanguageModel):
                 attention_mask,
             )
 
-        output = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
+        output = self.tokenizer.batch_decode(outputs, skip_special_tokens=False)
         prompts = self.tokenizer.batch_decode(input_ids, skip_special_tokens=False)
         for prompt, out in zip(prompts, output):
             print(prompt.replace(self.tokenizer.pad_token, ""))
-            print("-->", out)
+            print("-->", out.replace(self.tokenizer.pad_token, ""))
             print("-----")
 
         return outputs

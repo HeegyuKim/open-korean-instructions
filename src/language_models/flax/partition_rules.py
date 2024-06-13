@@ -189,6 +189,7 @@ RULES = [
     (htf.GemmaConfig, get_gemma),
     (htf.LlamaConfig, get_llama),
     (htf.MistralConfig, get_mistral),
+    (htf.Qwen2Config, get_mistral),
     ("Phi3Config", get_phi3),
 ]
 
