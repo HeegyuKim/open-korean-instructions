@@ -1,6 +1,5 @@
 import fire
 from .language_models.utils import load_model
-from .language_models.mt_model import Seagull13B
 from .utils.eval_utils import batched_iteration, estimate_skip_length
 from datasets import load_dataset, Dataset
 from tqdm import tqdm
@@ -40,6 +39,17 @@ def load_target_dataset(name):
         df = Dataset.from_pandas(df)
         print(len(df), "items in dataset")
         return df, ["instruction"]
+    elif name == "HuggingFaceH4/ultrafeedback_binarized":
+        ds = load_dataset("HuggingFaceH4/ultrafeedback_binarized", split="train_prefs")
+        def mapper(item):
+            return {
+                "instruction": item["chosen"][0]['content'],
+                "chosen": item["chosen"][-1]['content'],
+                "rejected": item["rejected"][-1]['content'],
+            }
+        ds = ds.map(mapper)
+        return ds, ["instruction", "rejected"]
+        
     elif name == "openbmb/UltraFeedback":
         ds = load_dataset("openbmb/UltraFeedback", split="train")
         df = ds.to_pandas()
@@ -71,6 +81,13 @@ def main(
     model = load_model(model, prompt_length=prompt_length, max_length=max_length, batch_size=batch_size, gen_args=gen_args, chat_template=chat_template, eos_token=eos_token)
     
 
+    if "heegyu" in model_name:
+        system_prompt = 'You are a Korean translator. Translate your English text into Korean'
+    elif "Seagull" in model_name:
+        system_prompt = "주어진 문장을 한국어로 번역하세요."
+    else:
+        system_prompt = "You are a Korean translator. Translate given English text into Korean text. When translating the source code, only comments should be translated.\n\n===English Text===\nHello!"
+
     skip_length = estimate_skip_length(output_file)
     if skip_length > 0:
         dataset = dataset.select(range(skip_length, len(dataset)))
@@ -80,9 +97,13 @@ def main(
 
     for batch in tqdm(batched_iteration(dataset, batch_size=batch_size), total=len(dataset)//batch_size):
         for key in keys:
-            prompts = ["Hello! " + x[key] for x in batch]
-            histories = [[{"role": "system", "content": "주어진 문장을 한국어로 번역하세요."}] for _ in range(len(batch))]
-            responses = model.generate_batch(prompts, histories=histories, gen_args=gen_args, generation_prefix="안녕하세요!")
+            if "Qwen2" in model_name:
+                prompts = [system_prompt + x[key] for x in batch]
+                responses = model.generate_batch(prompts, histories=None, gen_args=gen_args, generation_prefix="===Korean Text===\n안녕하세요!")
+            else:
+                prompts = ["Hello! " + x[key] for x in batch]
+                histories = [[{"role": "system", "content": system_prompt}] for _ in range(len(batch))]
+                responses = model.generate_batch(prompts, histories=histories, gen_args=gen_args, generation_prefix="안녕하세요!")
 
             for item, response in zip(batch, responses):
                 item[f"{key}_ko"] = response
