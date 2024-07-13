@@ -68,7 +68,10 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [HAERAE-HUB/qarv-instruct-100k](https://huggingface.co/datasets/HAERAE-HUB/qarv-instruct-100k) | 100k | 싱글턴 | 한국에 대한 지식이 필요한 지시문-답변 쌍 (영어 포함) |
 | [kuotient/orca-math-word-problems-193k-korean](https://huggingface.co/datasets/kuotient/orca-math-word-problems-193k-korean) | 193k | 싱글턴 | microsoft/orca-math-word-problems-200k 번역 |
 | [kuotient/orca-math-korean-preference](https://huggingface.co/datasets/kuotient/orca-math-korean-preference) | 193k | 싱글턴(DPO) | 번역된 microsoft/orca-math-word-problems-200k를 이용해 만든 DPO 데이터셋 |
-
+| [jojo0217/korean_safe_conversation](https://huggingface.co/datasets/jojo0217/korean_safe_conversation) | 26k | 싱글턴 | 성균관대 - VAIV COMPANY 산학협력을 위해 구축한 일상대화 데이터로, 자연스럽고 윤리적인 챗봇 구축을 위한 데이터셋 |
+| [HAERAE-HUB/K2-Feedback](https://huggingface.co/datasets/HAERAE-HUB/K2-Feedback) | 100k | 싱글턴 | K^2-피드백은 한국어 모델에서 세분화된 평가 능력을 향상시키기 위해 만들어진 데이셋, [Feedback Collection](https://huggingface.co/datasets/kaist-ai/Feedback-Collection)을 기반으로 한국 문화와 언어학에 특화된 지시문을 통합합니다. (NOTE: 원래 [Prometheus](https://arxiv.org/abs/2310.08491) 모델 학습 용 데이터지만 5점 output만을 가져와서 학습에 활용할 수 있다) |
+| [maywell/kiqu_samples](https://huggingface.co/datasets/maywell/kiqu_samples) | 24.9k | 싱글턴 | kiqu-70b 모델의 출력 샘플입니다. |
+| [CarrotAI/ko-instruction-dataset](https://huggingface.co/datasets/CarrotAI/ko-instruction-dataset) | 7k | 싱글턴 | WizardLM-2-8x22B 모델을 사용하여 생성한 한국어로 이루어진 고품질 한국어 데이터셋, WizardLM: Empowering Large Language Models to Follow Complex Instructions에서 소개된 방법으로 생성 | 
 
 ## 평가용 데이터셋
 | 이름 | # | 타입 | 내용 |
@@ -78,12 +81,18 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [HAERAE-HUB/CSAT-QA](https://huggingface.co/datasets/HAERAE-HUB/CSAT-QA) | 0.9k | MCQA | 국어 수능문제 |
 | [HAERAE-HUB/K2-Eval](https://huggingface.co/datasets/HAERAE-HUB/K2-Eval) | 90 | 생성 | 정확한 답변을 위해서는 한국어 문화에 대한 깊이 있는 지식이 필요한 90개의 사람이 작성한 지시문, 사람 혹은 GPT-4가 평가 |
 | [sean0042/KorMedMCQA](https://huggingface.co/datasets/sean0042/KorMedMCQA) | < 1k | MCQA | 한국어 의료 QA 벤치마크 |
+| [HAERAE-HUB/Korean-Human-Judgements](https://huggingface.co/datasets/HAERAE-HUB/Korean-Human-Judgements) | < 1k | Human Preference | 각각 질문, 답변 A, 답변 B와 사람의 선호 표시 |
+
 
 ## 평가 플랫폼
 - [Ko Chatbot Arena Leaderboard](https://huggingface.co/spaces/instructkr/ko-chatbot-arena-leaderboard): 사람이 여러 챗봇의 결과를 비교해보고 그 승률과 ELO 점수를 보여주는 리더보드
 - [instructkr/LogicKor-leaderboard](https://huggingface.co/spaces/instructkr/LogicKor-leaderboard): 한국어 언어모델 다분야 사고력 벤치마크
 - [호랑이 LLM 리더보드](https://wandb.ai/wandb-korea/korean-llm-leaderboard/reports/-LLM---Vmlldzo3MzIyNDE2?accessToken=95bffmg3gwblgohulknz7go3h66k11uqn1l3ytjma1uj3w0l0dwh1fywgsgpbdyy): wandb에서 공개한 Q&A, 멀티턴 형식의 한국어 LLM 평가 리더보드
 - [ko-RM-judge](https://github.com/HeegyuKim/ko-rm-judge): 보상 모델(Reward Model)을 이용하여 챗봇의 대답을 평가하고, 그 점수를 비교
+
+## 한국어 합성 데이터 구축에 참고할 저장소
+- [iKnowLab-Projects/ko-genstruct](https://github.com/iKnowLab-Projects/ko-genstruct)
+- [lcw99/evolve-instruct](https://github.com/lcw99/evolve-instruct)
 
 
 
