@@ -2,25 +2,6 @@
 Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어 instruction dataset들을 모아둔 저장소입니다. <br/>
 이 외에도  번역하거나 GPT를 이용해서 생성한 다양한 데이터들이 존재합니다. 혹시 새로운 데이터가 있다면 PR로 알려주세요.
 
-## 공개 데이터를 포멧을 통일하고 병합한 데이터
-| 이름 | # | 데이터 |
-|---|---|---|
-| [open-korean-instructions](https://huggingface.co/datasets/heegyu/open-korean-instructions) | 376K | KoAlpaca v1.0과 v1.1, ShareGPT DeepL 번역, OIG-smallchip2-ko, KorQuAD-chat |
-| [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) | 171K | KoAlpaca v1.1, ShareGPT-74k-ko의 코드제거 버전, KorQuAD-chat,  evolve-instruct, KoInstruct-QA, ko-lima-vicuna-kullm-v2의 GPT4ALL, Dolly 데이터 |
-
-## 공개 데이터를 이용해서 직접 학습한 모델 모음
-| 이름 | 크기 | 데이터 |
-| --- | --- | --- |
-| [heegyu/gorani-v0](https://huggingface.co/heegyu/gorani-v0) | 355M | [open-korean-instructions](https://huggingface.co/datasets/heegyu/open-korean-instructions) |
-| [heegyu/polyglot-ko-1.3b-chat](https://huggingface.co/heegyu/polyglot-ko-1.3b-chat) | 1.3B | [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) |
-| [heegyu/polyglot-ko-3.8b-chat](https://huggingface.co/heegyu/polyglot-ko-3.8b-chat) | 3.8B | [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) |
-| [heegyu/KoLIMA-5.8b](https://huggingface.co/heegyu/KoLIMA-5.8b) | 5.8B | [changpt/ko-lima-vicuna](https://huggingface.co/datasets/changpt/ko-lima-vicuna) |
-| [heegyu/polyglot-ko-5.8b-chat](https://huggingface.co/heegyu/polyglot-ko-5.8b-chat) | 5.8B | [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) |
-| [heegyu/llama-2-ko-7b-chat](https://huggingface.co/heegyu/llama-2-ko-7b-chat) | 7B | [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) |
-| [iknow-lab/AULM-12.8b-v0](https://huggingface.co/iknow-lab/AULM-12.8b-v0) | 12.8B | [AULM-0809](https://huggingface.co/datasets/heegyu/aulm-0809) |
-
-[355M 모델 Gradio Demo](https://huggingface.co/spaces/heegyu/gorani-v0)
-
 ## 공개된 데이터 정리
 | 이름 | # | 타입 | 내용 |
 |---|---|---|---|
@@ -75,7 +56,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [HAERAE-HUB/HR-Instruct-Math-v0.1](https://huggingface.co/datasets/HAERAE-HUB/HR-Instruct-Math-v0.1) | 30k | 싱글턴 | 한국어 수학 instruction 데이터 (PoC 버전) |
 | [iknow-lab/qarv-instruct-ko-mt](https://huggingface.co/datasets/iknow-lab/qarv-instruct-ko-mt) | 10K | 멀티턴 | [HAERAE-HUB/qarv-instruct-ko](https://huggingface.co/datasets/HAERAE-HUB/qarv-instruct-ko) 데이터 1만여개에 GPT-3.5-turbo를 이용해서 2턴 대화를 더 추가한 멀티턴 데이터 |
 | [iknow-lab/ko-evol-writing-wiki](https://huggingface.co/datasets/iknow-lab/ko-evol-writing-wiki) | 30K | 싱글턴 | GPT-3.5-turbo를 이용해서 생성한 글쓰기 / 창의적 글쓰기 데이터 |
-
+| [AIHub RLHF dataset](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=71748) | SFT(13K), RM(33K), PPO(33K) | 싱글턴 | RM 데이터는 지시문과 5개 답변에 대해 순위가 매겨져있음. PPO 데이터의 경우 지시문만 있으며 답변 없음. |
 
 ## 평가용 데이터셋
 | 이름 | # | 타입 | 내용 |
