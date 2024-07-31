@@ -72,6 +72,10 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [HAERAE-HUB/K2-Feedback](https://huggingface.co/datasets/HAERAE-HUB/K2-Feedback) | 100k | 싱글턴 | K^2-피드백은 한국어 모델에서 세분화된 평가 능력을 향상시키기 위해 만들어진 데이셋, [Feedback Collection](https://huggingface.co/datasets/kaist-ai/Feedback-Collection)을 기반으로 한국 문화와 언어학에 특화된 지시문을 통합합니다. (NOTE: 원래 [Prometheus](https://arxiv.org/abs/2310.08491) 모델 학습 용 데이터지만 5점 output만을 가져와서 학습에 활용할 수 있다) |
 | [maywell/kiqu_samples](https://huggingface.co/datasets/maywell/kiqu_samples) | 24.9k | 싱글턴 | kiqu-70b 모델의 출력 샘플입니다. |
 | [CarrotAI/ko-instruction-dataset](https://huggingface.co/datasets/CarrotAI/ko-instruction-dataset) | 7k | 싱글턴 | WizardLM-2-8x22B 모델을 사용하여 생성한 한국어로 이루어진 고품질 한국어 데이터셋, WizardLM: Empowering Large Language Models to Follow Complex Instructions에서 소개된 방법으로 생성 | 
+| [HAERAE-HUB/HR-Instruct-Math-v0.1](https://huggingface.co/datasets/HAERAE-HUB/HR-Instruct-Math-v0.1) | 30k | 싱글턴 | 한국어 수학 instruction 데이터 (PoC 버전) |
+| [iknow-lab/qarv-instruct-ko-mt](https://huggingface.co/datasets/iknow-lab/qarv-instruct-ko-mt) | 10K | 멀티턴 | [HAERAE-HUB/qarv-instruct-ko](https://huggingface.co/datasets/HAERAE-HUB/qarv-instruct-ko) 데이터 1만여개에 GPT-3.5-turbo를 이용해서 2턴 대화를 더 추가한 멀티턴 데이터 |
+| [iknow-lab/ko-evol-writing-wiki](https://huggingface.co/datasets/iknow-lab/ko-evol-writing-wiki) | 30K | 싱글턴 | GPT-3.5-turbo를 이용해서 생성한 글쓰기 / 창의적 글쓰기 데이터 |
+
 
 ## 평가용 데이터셋
 | 이름 | # | 타입 | 내용 |
