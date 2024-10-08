@@ -67,7 +67,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [HAERAE-HUB/K2-Eval](https://huggingface.co/datasets/HAERAE-HUB/K2-Eval) | 90 | 생성 | 정확한 답변을 위해서는 한국어 문화에 대한 깊이 있는 지식이 필요한 90개의 사람이 작성한 지시문, 사람 혹은 GPT-4가 평가 |
 | [sean0042/KorMedMCQA](https://huggingface.co/datasets/sean0042/KorMedMCQA) | < 1k | MCQA | 한국어 의료 QA 벤치마크 |
 | [HAERAE-HUB/Korean-Human-Judgements](https://huggingface.co/datasets/HAERAE-HUB/Korean-Human-Judgements) | < 1k | Human Preference | 각각 질문, 답변 A, 답변 B와 사람의 선호 표시 |
-
+| [HAERAE-HUB/KUDGE](https://huggingface.co/datasets/HAERAE-HUB/KUDGE) | 2.8k | Human Preference | 한국어 응답에 대한 메타평가 능력을 검사하기위한 5.6k한국어 human annotation |
 
 ## 평가 플랫폼
 - [Ko Chatbot Arena Leaderboard](https://huggingface.co/spaces/instructkr/ko-chatbot-arena-leaderboard): 사람이 여러 챗봇의 결과를 비교해보고 그 승률과 ELO 점수를 보여주는 리더보드
