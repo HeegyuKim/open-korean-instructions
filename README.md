@@ -74,6 +74,8 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 - [instructkr/LogicKor-leaderboard](https://huggingface.co/spaces/instructkr/LogicKor-leaderboard): 한국어 언어모델 다분야 사고력 벤치마크
 - [호랑이 LLM 리더보드](https://wandb.ai/wandb-korea/korean-llm-leaderboard/reports/-LLM---Vmlldzo3MzIyNDE2?accessToken=95bffmg3gwblgohulknz7go3h66k11uqn1l3ytjma1uj3w0l0dwh1fywgsgpbdyy): wandb에서 공개한 Q&A, 멀티턴 형식의 한국어 LLM 평가 리더보드
 - [ko-RM-judge](https://github.com/HeegyuKim/ko-rm-judge): 보상 모델(Reward Model)을 이용하여 챗봇의 대답을 평가하고, 그 점수를 비교
+- [Korean-SAT-LLM-Leaderboard](https://github.com/minsing-jin/Korean-SAT-LLM-Leaderboard): 10년치 대한민국 수능시험 평가
+- [KoMT-Bench](https://huggingface.co/datasets/LGAI-EXAONE/KoMT-Bench): MT벤치 한국어
 
 ## 한국어 합성 데이터 구축에 참고할 저장소
 - [iKnowLab-Projects/ko-genstruct](https://github.com/iKnowLab-Projects/ko-genstruct)
