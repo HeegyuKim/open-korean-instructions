@@ -58,6 +58,13 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [iknow-lab/ko-evol-writing-wiki](https://huggingface.co/datasets/iknow-lab/ko-evol-writing-wiki) | 30K | 싱글턴 | GPT-3.5-turbo를 이용해서 생성한 글쓰기 / 창의적 글쓰기 데이터 |
 | [AIHub RLHF dataset](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=71748) | SFT(13K), RM(33K), PPO(33K) | 싱글턴 | RM 데이터는 지시문과 5개 답변에 대해 순위가 매겨져있음. PPO 데이터의 경우 지시문만 있으며 답변 없음. |
 
+## 다른 컬렉션
+| 컬렉션 | 설명 |
+|---|---|
+| [유준혁님의 번역 데이터](https://huggingface.co/collections/youjunhyeok/en-ko-translate-6703474b419fcb9e5d6a7852) | 영어 데이터셋을 한글로 번역한 데이터셋입니다. | 
+| [유준혁님의 번역 데이터 2(Magpie)](https://huggingface.co/collections/youjunhyeok/magpie-ko-66cbc570a9891d5b43a170d9) | Magpie 데이터셋 한국어 번역본 (@nayohan님 번역 모델 사용) |
+| [songys/huggingface_KoreanDataset](https://github.com/songys/huggingface_KoreanDataset) | 송영숙님의 2024년 10월 10일 기준 huggingface에 있는 한국어 데이터 세트 정리 |
+
 ## 평가용 데이터셋
 | 이름 | # | 타입 | 내용 |
 |---|---|---|---|
