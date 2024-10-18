@@ -64,7 +64,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [유준혁님의 번역 데이터](https://huggingface.co/collections/youjunhyeok/en-ko-translate-6703474b419fcb9e5d6a7852) | 영어 데이터셋을 한글로 번역한 데이터셋입니다. | 
 | [유준혁님의 번역 데이터 2(Magpie)](https://huggingface.co/collections/youjunhyeok/magpie-ko-66cbc570a9891d5b43a170d9) | Magpie 데이터셋 한국어 번역본 (@nayohan님 번역 모델 사용) |
 | [songys/huggingface_KoreanDataset](https://github.com/songys/huggingface_KoreanDataset) | 송영숙님의 2024년 10월 10일 기준 huggingface에 있는 한국어 데이터 세트 정리 |
-
+| [나요한님의 번역 데이터](https://huggingface.co/collections/nayohan/translated-en-ko-dataset-6665023b1036d124ede5f81c) | Datasets translated from English to Korean using llama3-instrucTrans-enko-8b`` |
 ## 평가용 데이터셋
 | 이름 | # | 타입 | 내용 |
 |---|---|---|---|
