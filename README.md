@@ -57,6 +57,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [iknow-lab/qarv-instruct-ko-mt](https://huggingface.co/datasets/iknow-lab/qarv-instruct-ko-mt) | 10K | 멀티턴 | [HAERAE-HUB/qarv-instruct-ko](https://huggingface.co/datasets/HAERAE-HUB/qarv-instruct-ko) 데이터 1만여개에 GPT-3.5-turbo를 이용해서 2턴 대화를 더 추가한 멀티턴 데이터 |
 | [iknow-lab/ko-evol-writing-wiki](https://huggingface.co/datasets/iknow-lab/ko-evol-writing-wiki) | 30K | 싱글턴 | GPT-3.5-turbo를 이용해서 생성한 글쓰기 / 창의적 글쓰기 데이터 |
 | [AIHub RLHF dataset](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=71748) | SFT(13K), RM(33K), PPO(33K) | 싱글턴 | RM 데이터는 지시문과 5개 답변에 대해 순위가 매겨져있음. PPO 데이터의 경우 지시문만 있으며 답변 없음. |
+| [beomi/KoAlpaca-RealQA](https://huggingface.co/datasets/beomi/KoAlpaca-RealQA) | 18K | 싱글턴 | 2023-2024년 ChatKoAlpaca 서비스의 실제 한국어 사용자 대화를 기반으로 만들어진 한국어 자연어 처리용 데이터셋입니다. |
 
 ## 다른 컬렉션
 | 컬렉션 | 설명 |
