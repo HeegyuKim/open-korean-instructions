@@ -59,6 +59,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [AIHub RLHF dataset](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=71748) | SFT(13K), RM(33K), PPO(33K) | 싱글턴 | RM 데이터는 지시문과 5개 답변에 대해 순위가 매겨져있음. PPO 데이터의 경우 지시문만 있으며 답변 없음. |
 | [beomi/KoAlpaca-RealQA](https://huggingface.co/datasets/beomi/KoAlpaca-RealQA) | 18K | 싱글턴 | 2023-2024년 ChatKoAlpaca 서비스의 실제 한국어 사용자 대화를 기반으로 만들어진 한국어 자연어 처리용 데이터셋입니다. |
 | [junnei/ko-limo](https://huggingface.co/datasets/junnei/ko-limo) | 1k | 싱글턴 | [LIMO: Less Is More for Reasoning](https://arxiv.org/pdf/2502.03387)의 [학습 데이터](https://huggingface.co/datasets/GAIR/LIMO)를 한국어로 번역한 데이터셋 |
+| [lemon-mint/smol-koreantalk](https://huggingface.co/datasets/lemon-mint/smol-koreantalk) | 460k | 멀티턴 | SmolLM2의 인스트럭션 훈련 데이터 HuggingFaceTB/smol-smoltalk를 한국어로 번역 |
 
 ## 다른 컬렉션
 | 컬렉션 | 설명 |
