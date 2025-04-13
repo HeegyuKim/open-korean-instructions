@@ -60,6 +60,7 @@ Open Korean Instructions는 언어모델을 학습하기 위한 공개 한국어
 | [beomi/KoAlpaca-RealQA](https://huggingface.co/datasets/beomi/KoAlpaca-RealQA) | 18K | 싱글턴 | 2023-2024년 ChatKoAlpaca 서비스의 실제 한국어 사용자 대화를 기반으로 만들어진 한국어 자연어 처리용 데이터셋입니다. |
 | [junnei/ko-limo](https://huggingface.co/datasets/junnei/ko-limo) | 1k | 싱글턴 | [LIMO: Less Is More for Reasoning](https://arxiv.org/pdf/2502.03387)의 [학습 데이터](https://huggingface.co/datasets/GAIR/LIMO)를 한국어로 번역한 데이터셋 |
 | [lemon-mint/smol-koreantalk](https://huggingface.co/datasets/lemon-mint/smol-koreantalk) | 460k | 멀티턴 | SmolLM2의 인스트럭션 훈련 데이터 HuggingFaceTB/smol-smoltalk를 한국어로 번역 |
+| [KRX-Data/Won-Instruct](https://huggingface.co/datasets/KRX-Data/Won-Instruct) | 86K | 싱글턴 | 금융 추론 및 도메인별 금융 작업에 특화된 한국어 모델을 훈련하기 위해 맞춤화된 포괄적인 데이터셋 |
 
 ## 다른 컬렉션
 | 컬렉션 | 설명 |
